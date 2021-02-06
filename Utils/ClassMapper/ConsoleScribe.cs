@@ -12,10 +12,19 @@ namespace Utils.ClassMapper
             this.MethodExecutionTime = new Dictionary<string, DateTime>();
         }
 
-        public void LogEntry(string method_name, object[] parameters)
+        public void LogEntry(string method_name, object[] parameters, object calling_object = null)
         {
             string output_string = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + "\t";
-            output_string += $"Enter Method > {method_name}, Parameters > ";
+
+            if (calling_object != null)
+            {
+                output_string += $"[{calling_object.GetType().Name}] Enter Method > {method_name}, Parameters > ";
+            }
+            else
+            {
+                output_string += $"Enter Method > {method_name}, Parameters > ";
+            }
+
 
             List<string> actual_params = new List<string>();
             if (parameters != null && parameters.Length > 0)
@@ -47,18 +56,34 @@ namespace Utils.ClassMapper
             Console.WriteLine(output_string);
         }
 
-        public void LogException(string method_name, Exception ex)
+        public void LogException(string method_name, Exception ex, object calling_object = null)
         {
             string output_string = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + "\t";
-            output_string += $"Method Exception > {method_name} : ";
+
+            if (calling_object != null)
+            {
+                output_string += $"[{calling_object.GetType().Name}] Method Exception > {method_name} : ";
+            }
+            else
+            {
+                output_string += $"Method Exception > {method_name} : ";
+            }
+
             output_string += ex.ToString();
             Console.WriteLine(output_string);
         }
 
-        public void LogExit(string method_name, object return_value)
+        public void LogExit(string method_name, object return_value, object calling_object = null)
         {
             string output_string = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + "\t";
-            output_string += $"Exit Method > {method_name} ";
+            if( calling_object != null)
+            {
+                output_string += $"[{calling_object.GetType().Name}] Exit Method > {method_name} ";
+            }
+            else
+            {
+                output_string += $"Exit Method > {method_name} ";
+            }
 
             if (this.MethodExecutionTime.ContainsKey(method_name))
             {

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionWrapper", "Function
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{A4040618-A152-4835-AAA4-F2CDDEE04500}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complete", "Complete\Complete.csproj", "{1E22BCD6-CB15-4E82-805D-961E14E703BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A4040618-A152-4835-AAA4-F2CDDEE04500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4040618-A152-4835-AAA4-F2CDDEE04500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4040618-A152-4835-AAA4-F2CDDEE04500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E22BCD6-CB15-4E82-805D-961E14E703BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E22BCD6-CB15-4E82-805D-961E14E703BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E22BCD6-CB15-4E82-805D-961E14E703BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E22BCD6-CB15-4E82-805D-961E14E703BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

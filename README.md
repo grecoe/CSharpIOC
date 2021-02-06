@@ -32,4 +32,7 @@ Filling in the class from step 3 is straighforward but allows you to call regula
 That is all wrapped under the hood for you in a class called Mapper which is where the wrapping is happening and logging/timing/etc is placed around your original class (step2).
 
 ## Complete
-TBD: This is a complete example using both patterns above - IOC and Class Wrapping - for a complete example of using these pieces of functionality. 
+This is a complete, although contrived, example using both patterns above - IOC and Class Wrapping - for a complete example of using these pieces of functionality. 
+
+In this example there is a base class of ISourceReader and you have two types of it. ISystemReader and IWebReader in which you'd like to use IOC as well as wrapping them to log out calling information. 
+

@@ -12,7 +12,7 @@ namespace Utils.ClassMapper
     }
 
     public class Mapper<T, TScribe>
-        where T : class
+        where T : notnull
         where TScribe : IScribe
     {
 
@@ -55,7 +55,7 @@ namespace Utils.ClassMapper
                 // Record the function is about to be called and with which parameters. 
                 if (this.Scribe != null)
                 {
-                    this.Scribe.LogEntry(name, method_params);
+                    this.Scribe.LogEntry(name, method_params, this.Parent);
                 }
 
 
@@ -104,7 +104,7 @@ namespace Utils.ClassMapper
                     // it fom bubbling out...
                     if (this.Scribe != null)
                     {
-                        this.Scribe.LogException(name, ex);
+                        this.Scribe.LogException(name, ex, this.Parent);
                     }
 
                     throw ex;
@@ -113,7 +113,7 @@ namespace Utils.ClassMapper
                 // Log out the end of the function call (default IScribe will capture execution time as well)
                 if (this.Scribe != null)
                 {
-                    this.Scribe.LogExit(name, returnValue);
+                    this.Scribe.LogExit(name, returnValue, this.Parent);
                 }
             }
 

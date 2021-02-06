@@ -204,6 +204,13 @@ namespace Utils.IOC
 
                 }
 
+                // If the creation was a generic then we want to keep this copy as well for later reference
+                if( tType.IsGenericType)
+                {
+                    Registered reg = new Registered(tType.GetConstructors()) { Self = tType, Instance = return_value };
+                    this.TypeMap.Add(tType, reg);
+                }
+
                 // We didn't know about this before, so keep it
                 this.RegisterType(return_value);
             }
